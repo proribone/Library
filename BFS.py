@@ -1,6 +1,6 @@
 #グラフ幅優先探索
 #from collections import deque
-def bfs(G,s):
+def bfs(G,s,N):
     dist=[-1]*N
     d=deque()
     dist[s]=0
@@ -17,7 +17,7 @@ def bfs(G,s):
 
 #グリッド幅優先探索
 #from collections import deque
-def mbfs(G,sh,sw):
+def mbfs(G,sh,sw,H,W):
     dist=[[-1]*W for i in range(H)]
     dist[sh][sw]=0
 
