@@ -35,4 +35,4 @@ def PER(n,r):
     if n<r or r<0:
         return 0
     else:
-        return (fac[n]*finv[n-r])
+        return (fac[n]*finv[n-r]%MOD)
