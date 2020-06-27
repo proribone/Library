@@ -34,9 +34,8 @@ def mbfs(G,sh,sw,H,W):
             nw=w+dy[dir]
             if(nh>H-1 or nh<0 or nw>W-1 or nw<0):
                 continue
-            if(dist[nh][nw]!=-1 or S[nh][nw]=='#'):
+            if(dist[nh][nw]!=-1 or G[nh][nw]=='#'):
                 continue
             dist[nh][nw]=dist[h][w]+1
-            S[nh][nw]=='#'
             d.append([nh,nw])
     return dist
