@@ -1,11 +1,11 @@
 #1-indexed
 #get,cumは半開区間
 
-import math
 class BIT:
     def __init__(self,N):
         self.N=N
         self.bit=[0]*(N+1)
+        self.b=1<<N.bit_length()-1
     def add(self,a,w):
         x=a
         while(x<=self.N):
@@ -23,7 +23,7 @@ class BIT:
         if w<=0:
             return 0
         x=0
-        k=1<<self.N-1
+        k=self.b
         while k>0:
             if x+k<=self.N and self.bit[x+k]<w:
                 w-=self.bit[x+k]
