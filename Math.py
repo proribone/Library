@@ -9,17 +9,18 @@ def is_prime(n):
 
 #素数列挙
 def primes(n):
-    if(n==1):
+    if n==1 or n==0:
         return []
-    m=n**0.5
-    li=[i for i in range(2,n+1)]
-    primes=[]
-    while li[0]<=m:
-        primes.append(li[0])
-        tmp=li[0]
-        li=[i for i in li if i%tmp!=0]
-    primes.extend(li)
-    return primes
+    arr=[True]*(n+1)
+    arr[0],arr[1]=False,False
+    p=[]
+    for i in range(2,n+1):
+        if arr[i]==False:
+            continue
+        p.append(i)
+        for j in range(i*2,n+1,i):
+            arr[j]=False
+    return p
 
 #約数列挙
 def factor(N):
