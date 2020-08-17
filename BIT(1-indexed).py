@@ -1,4 +1,5 @@
 #1-indexed
+#addはaにwを加算する
 #get,cumは半開区間
 
 class BIT:
