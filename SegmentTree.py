@@ -5,8 +5,8 @@
 class SEGTree:
     def __init__(self,n):
         self.Unit=2**31-1
-        i=1
-        while(i<n):
+        i=1<<(n.bit_length()-1)
+        if i!=n:
             i*=2
         self.SEG=[self.Unit]*(2*i-1)
         self.d=i
