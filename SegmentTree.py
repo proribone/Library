@@ -1,6 +1,7 @@
 #0-indexed
 #RMQ
 #get,findは半開区間
+#8行目、16行目、19行目、28行目は演算に応じて変える
 
 class SEGTree:
     def __init__(self,n):
