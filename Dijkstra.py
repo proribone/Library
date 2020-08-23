@@ -19,6 +19,7 @@ def dijkstra(G,s,n):
 
 #グリッド上のダイクストラ
 #(nh,nw)をintに圧縮
+
 INF=10**30
 from heapq import heappop,heappush,heapify
 def dijkstra(G,H,W,sh,sw,cost):
