@@ -35,7 +35,7 @@ class segtree:
             
             if r&1:
                 r-=1
-                rres=self.op(rres,self.SEG[r])
+                rres=self.op(self.SEG[r],rres)
             
             l>>=1
             r>>=1
