@@ -1,5 +1,10 @@
 '''
-verified 2020/10/02 https://judge.yosupo.jp/submission/25404
+
+verified 2020/10/02 
+https://atcoder.jp/contests/practice2/submissions/17138406
+https://atcoder.jp/contests/abl/submissions/17138370
+https://atcoder.jp/contests/abc179/submissions/17138337
+
 抽象化非再帰遅延評価セグメント木
 
 n:
@@ -12,11 +17,11 @@ e:
 opの単位元
 
 mapping:
-区間変更の値への反映
+区間作用の値への反映
 mapping(f,x)で渡す
 
 Id:
-値に変化を及ぼさないようなmappingの変更
+作用・マージで変化を及ぼさないような恒等写像
 
 composition:
 2つの変更のマージ
@@ -25,8 +30,19 @@ composition(new,old)で渡す
 arr:
 初期配列
 
+update(l,r,x):
+半開区間[l,r)にxを作用
+
+query(l,r):
+半開区間[l,r)の値を取得
+
+get(i):
+i番目の値を取得
+
+※
 data・lazyがtupleになる場合はoffsetで整数にする
 入力はsys.stdin.readline
+Idがmapping, compositionの両方で変化を与えないように注意
 
 '''
 
@@ -47,9 +63,9 @@ class lazysegtree:
                 self.data[i+self.size]=arr[i]
             for i in reversed(range(self.size)):
                 self.data[i]=self.op(self.data[i<<1],self.data[i<<1|1])
-
+ 
     
-    def update_range(self,l,r,x):
+    def update(self,l,r,x):
         if l>=r:
             return self.e
         l+=self.size
@@ -69,11 +85,11 @@ class lazysegtree:
             
             l>>=1
             r>>=1
-
+ 
         self.calc_above(l0)
         self.calc_above(r0)
-
-    def getrange(self,l,r):
+ 
+    def query(self,l,r):
         if l>=r:
             return
         
@@ -94,11 +110,14 @@ class lazysegtree:
             l>>=1
             r>>=1
         return self.op(lres,rres)
-    
+ 
+    def get(self,i):
+        i+=self.size
+        self.propagate_above(i)
+        return self.calc(i)
+ 
     def propagate(self,i):
         v=self.lazy[i]
-        if v==None:
-            return
         self.data[i]=self.calc(i)
         self.lazy[i<<1]=self.composition(v,self.lazy[i<<1])
         self.lazy[i<<1|1]=self.composition(v,self.lazy[i<<1|1])
