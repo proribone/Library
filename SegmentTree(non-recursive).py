@@ -1,5 +1,20 @@
-#一点更新区間取得非再帰セグメント木(0-indexed)
-#仕様は再帰セグメント木と同じ
+'''
+0-indexed 抽象化非再帰セグメント木
+再帰セグメント木に比べて高速
+
+segtree(n,op,e):
+長さnの配列Sを作成
+eを単位元とする演算opによる区間取得が可能
+
+update(i,x):
+S[i]をxで更新 O(logN)
+
+get(i):
+S[i]を取得 O(1)
+
+query(l,r):
+op(S[l],S[l+1],....S[r-1])を計算 O(logN)
+'''
 
 import sys
 read=sys.stdin.readline

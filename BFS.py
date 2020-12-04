@@ -1,5 +1,11 @@
-#グラフ幅優先探索
-#from collections import deque
+'''
+幅優先探索(BFS)
+
+bfs(G,s,N):
+頂点数Nの重みなしグラフGにおけるsを始点とした各頂点への最小コスト
+dist[v]=頂点vへの最小コスト
+'''
+from collections import deque
 def bfs(G,s,N):
     dist=[-1]*N
     d=deque()
@@ -15,8 +21,14 @@ def bfs(G,s,N):
             d.append(nv)
     return dist
 
-#グリッド幅優先探索
-#from collections import deque
+'''
+グリッド上の幅優先探索
+
+mbfs(G,sh,sw,H,W):
+H行W列のグリッドGにおける(sh,sw)を始点とした各頂点への最小コスト
+dist[h][w]=(h,w)への最小コスト
+'''
+from collections import deque
 def mbfs(G,sh,sw,H,W):
     dist=[[-1]*W for i in range(H)]
     dist[sh][sw]=0

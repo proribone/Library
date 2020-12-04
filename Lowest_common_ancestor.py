@@ -1,4 +1,10 @@
-#最小共通祖先
+'''
+最小共通祖先(Lowest Common Ancestor)
+
+LCA(N,G,r):rを根とするN頂点の木GでLCAクラスを作成
+get(u,v):頂点uと頂点vの最小共通祖先 O(logN)
+getdist(u,v):頂点uと頂点vの距離 O(logN)
+'''
 
 import sys
 sys.setrecursionlimit(10**7)

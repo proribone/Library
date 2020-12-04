@@ -31,17 +31,17 @@ arr:
 初期配列
 
 update(l,r,x):
-半開区間[l,r)にxを作用
+半開区間[l,r)にxを作用 O(logN)
 
 query(l,r):
-半開区間[l,r)の値を取得
+半開区間[l,r)の値を取得 O(logN)
 
 get(i):
-i番目の値を取得
+i番目の値を取得 O(logN)
 
 ※
 data・lazyがtupleになる場合はoffsetで整数にする
-入力はsys.stdin.readline
+入力はsys.stdin.readline推奨
 Idがmapping, compositionの両方で変化を与えないように注意
 
 '''

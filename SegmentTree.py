@@ -1,7 +1,17 @@
-#0-indexed
-#抽象化セグメント木
-#opで演算、eで単位元を指定
-#get,findは半開区間
+'''
+(使用非推奨)
+0-indexed 抽象化再帰セグメント木
+
+SEGTree(n,op,e):
+長さnの配列Sを作成
+eを単位元とする演算opによる区間取得が可能
+
+update(i,x):
+S[i]をxで更新 O(logN)
+
+get(a,b):
+op(S[a],S[a+1],.....S[b-1])を計算 O(logN)
+'''
 
 class SEGTree:
     def __init__(self,n,op,e):
