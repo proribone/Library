@@ -1,5 +1,15 @@
-#opで演算、eで単位元を指定
-#getは半開区間
+'''
+Sparse Table
+
+SparseTable(arr,N,op,e):
+長さNの配列arrのSparse tableを作成
+結合則・冪等性を満たす演算op, 単位元eを指定する
+
+初期化O(NlogN)
+
+get(l,r):
+op(arr[l],arr[l+1],......arr[r-1])を計算
+'''
 
 class SparseTable:
     def __init__(self,arr,N,op,e):

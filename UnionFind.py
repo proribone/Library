@@ -1,4 +1,21 @@
-#0-indexed
+'''
+Union-Find Tree
+0-indexed
+
+各操作の計算量はたぶんO(α(N))
+
+UnionFind(N):
+N頂点0辺で初期化
+
+union(a,b):
+辺(a,b)を追加 もともと連結だった場合何もしない
+
+size(a):
+頂点aが属する連結成分のサイズ
+
+same(a,b):
+aとbが属する連結成分が等しいときTrue, 異なるときFalse
+'''
 
 class UnionFind:
     def __init__(self,N):
