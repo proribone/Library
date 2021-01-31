@@ -1,6 +1,6 @@
 INF=10**30
 #閉路検出
-def Belman_Ford(s,N,Edge):
+def Bellman_Ford(s,N,Edge):
     dist=[INF]*N
     dist[s]=0
     cnt=0
@@ -23,7 +23,7 @@ def Belman_Ford(s,N,Edge):
     else:
         return dist
 #全閉路検出
-def Belman_Ford_2(s,N,Edge):
+def Bellman_Ford_2(s,N,Edge):
     dist=[INF]*N
     neg=[False]*N
     dist[s]=0
